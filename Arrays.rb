@@ -2,6 +2,7 @@
 #    check out http://ruby-doc.org/core-1.9.3/Array.html
 a1 = [2, 17, 9, -7, 20, 14, -3]
 puts a1
+a1.sort!
 puts "Least is [least]; greatest is [greatest]"
 
 puts
@@ -19,7 +20,9 @@ puts
 # 2. write method items_with_cost_greater_than,
 #    which returns a hash of products:
 def items_with_cost_greater_than(products, min_cost)
-	# your code here
+	products.find_all do |prod|
+		prod[:cost] > min_cost
+	end
 end
 min_cost = 17
 puts "Items costing greater than #{min_cost} are:"
@@ -31,4 +34,4 @@ puts
 #    its current value plus 5:
 
 nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-puts "your code here"
+puts nums.map{|n| n*2 + 5}
